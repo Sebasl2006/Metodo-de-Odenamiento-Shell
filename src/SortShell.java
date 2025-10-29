@@ -8,17 +8,16 @@ public class SortShell {
         int comparaciones = 0;
         int cambios = 0;
         for (int gap = size/2; gap > 0; gap/=2) {
-           
+           boolean cam = false;
             for (int i = gap; i < size; i++) {
                 int temp = numeros[i];
                 int j = i;
                 comparaciones++;
                 while (j>=gap && numeros[j-gap] > temp ) {
                     numeros[j]= numeros[j - gap];
-                    boolean cam = true;
                     j-=gap;
                     comparaciones++;
-                    if(cam){
+                    if(!cam){
                         cambios++;
                     }
 
